@@ -5,7 +5,7 @@
 
         static bool czyPalindrom(string text)
         {
-            
+            if(text.Length==0) return false;
             {
                 for (int i = 0; i < text.Length ; i++)
                 {

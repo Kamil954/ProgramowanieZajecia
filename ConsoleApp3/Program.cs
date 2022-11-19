@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp3
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace ConsoleApp3
 {
     internal class Program
     {
@@ -20,6 +22,7 @@
         }
        */
 
+        /*
         static int from8to10(int number)
         {
             string numberString = number.ToString();
@@ -30,12 +33,35 @@
             }
         return wynik;
         }
+        */
+
+        static double f( double x)
+        {
+
+
+            return x*x+2*x+3;
+        }
 
     static void Main(string[] args)
         {
             // Console.WriteLine(czyPalindrom("kajak"));
-            Console.WriteLine(from8to10(762));
+            //Console.WriteLine(from8to10(762));
 
+            double poczatek = 0;
+            double koniec = 10;
+            double h = 0.1;
+            int n=(int) ((koniec - poczatek) / h);
+            double pole = 0;
+            for (int i = 0; i < n; i++)
+            {
+                double x0 = poczatek + i * h;
+                double x1 = x0 + h;
+                double a = f(x0);
+                double b = f(x1);
+                double poleTrapezu = ((a + b) / 2) * h;
+                pole = pole + poleTrapezu;
+            }
+            Console.WriteLine($"Pole funkcji: {pole}");
         }
     }
 }

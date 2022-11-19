@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Collections;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ConsoleApp3
 {
@@ -34,19 +35,38 @@ namespace ConsoleApp3
         return wynik;
         }
         */
-
+/*
         static double f( double x)
         {
 
 
             return x*x+2*x+3;
         }
+*/
+    static ArrayList naCzynniki(double liczba)
+        {
+            ArrayList lista = new ArrayList();
+            int k = 2;
+            while (liczba  != 1)
+            {
+                while (liczba %k == 0)
+                    {
 
+
+                    liczba = liczba / k;
+                    lista.Add(k);
+                }
+                k++;
+            }
+            
+
+            return lista;
+        }
     static void Main(string[] args)
         {
             // Console.WriteLine(czyPalindrom("kajak"));
             //Console.WriteLine(from8to10(762));
-
+            /* Cała
             double poczatek = 0;
             double koniec = 10;
             double h = 0.1;
@@ -62,6 +82,14 @@ namespace ConsoleApp3
                 pole = pole + poleTrapezu;
             }
             Console.WriteLine($"Pole funkcji: {pole}");
+            */
+
+            ArrayList czynniki = naCzynniki(4314);
+            foreach (var asdf in czynniki)
+            {
+                Console.WriteLine(asdf);
+            }
+
         }
     }
 }

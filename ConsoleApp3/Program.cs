@@ -89,7 +89,7 @@ namespace ConsoleApp3
             {
                 Console.WriteLine(asdf);
             }
-
+            Console.WriteLine("witam serdecznie");
         }
     }
 }
